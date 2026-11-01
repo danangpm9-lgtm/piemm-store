@@ -2,581 +2,322 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PIEMM STORE - Digital Store</title>
-  <meta name="description" content="PIEMM STORE - Toko produk dan layanan digital terpercaya.">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #080611;
-      --panel: #151024;
-      --purple: #8b35ff;
-      --pink: #d34cff;
-      --white: #ffffff;
-      --muted: #aaa1bd;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg);
-      color: white;
-      overflow-x: hidden;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(8,6,17,.94);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid #33204e;
-    }
-
-    .navbar {
-      min-height: 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .logo {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      background: linear-gradient(135deg,#a43bff,#5415bb);
-      box-shadow: 0 0 20px #8b35ff88;
-      font-size: 23px;
-    }
-
-    nav { display: flex; gap: 22px; font-size: 13px; color: #ddd4ed; }
-    nav a:hover { color: #d58aff; }
-
-    .admin-btn {
-      background: linear-gradient(110deg,#8b35ff,#c13fff);
-      padding: 10px 17px;
-      border-radius: 10px;
-      font-size: 12px;
-      font-weight: 700;
-      box-shadow: 0 0 18px #8b35ff55;
-    }
-
-    .hero {
-      margin: 34px auto;
-      min-height: 340px;
-      padding: 42px;
-      border: 1px solid #6b31a5;
-      border-radius: 25px;
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(90deg,rgba(12,7,25,.98),rgba(34,11,65,.86),rgba(13,8,29,.55)),
-        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1400&q=85') center/cover;
-      box-shadow: 0 0 35px #8b35ff22;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      right: 7%;
-      top: 15%;
-      background: #a638ff33;
-      filter: blur(70px);
-    }
-
-    .hero-content { position: relative; z-index: 1; max-width: 580px; }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 7px 13px;
-      border: 1px solid #b75aff;
-      border-radius: 30px;
-      color: #e1b7ff;
-      font-size: 11px;
-      margin-bottom: 18px;
-      background: #8b35ff22;
-    }
-
-    .hero h1 {
-      font-size: clamp(32px,5vw,54px);
-      line-height: 1.15;
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-
-    .hero h1 span {
-      color: #c77aff;
-      text-shadow: 0 0 20px #a638ff88;
-    }
-
-    .hero p { color: #d2c8e3; font-size: 14px; line-height: 1.8; }
-
-    .hero-actions { display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap; }
-
-    .primary, .secondary {
-      padding: 12px 20px;
-      border-radius: 10px;
-      font-size: 12px;
-      font-weight: 700;
-      display: inline-block;
-    }
-
-    .primary { background: linear-gradient(110deg,#8b35ff,#d044ff); }
-    .secondary { border: 1px solid #a45ce5; background: #160d28; }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 15px;
-      margin: 25px 0 38px;
-    }
-
-    .feature {
-      background: var(--panel);
-      border: 1px solid #302044;
-      border-radius: 15px;
-      padding: 18px;
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .feature-icon {
-      width: 43px;
-      height: 43px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: #7429bd33;
-      font-size: 21px;
-    }
-
-    .feature strong { display: block; font-size: 12px; }
-    .feature small { color: var(--muted); font-size: 10px; }
-
-    .section-title {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 15px;
-      margin: 38px 0 20px;
-    }
-
-    .section-title h2 { font-size: 23px; }
-    .section-title p { color: var(--muted); font-size: 11px; margin-top: 4px; }
-
-    .search {
-      width: 100%;
-      padding: 15px 18px;
-      color: white;
-      background: #171025;
-      border: 1px solid #42265e;
-      border-radius: 12px;
-      outline: none;
-      font-family: inherit;
-      margin-bottom: 24px;
-    }
-
-    .search:focus { border-color: #b04cff; box-shadow: 0 0 15px #8b35ff33; }
-
-    .category-title {
-      font-size: 17px;
-      margin: 30px 0 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .category-title::before {
-      content: "";
-      width: 5px;
-      height: 23px;
-      border-radius: 5px;
-      background: #b54cff;
-      box-shadow: 0 0 12px #b54cff;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 17px;
-    }
-
-    .product {
-      overflow: hidden;
-      border-radius: 16px;
-      background: linear-gradient(160deg,#1c1430,#100c1b);
-      border: 1px solid #342148;
-      transition: .25s;
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
-      border-color: #a64cff;
-      box-shadow: 0 8px 25px #8b35ff22;
-    }
-
-    .product img {
-      width: 100%;
-      height: 145px;
-      object-fit: cover;
-      display: block;
-      background: #211333;
-    }
-
-    .product-info { padding: 15px; }
-    .product-info h3 { font-size: 13px; margin-bottom: 7px; }
-    .product-info p { font-size: 10px; color: var(--muted); min-height: 32px; line-height: 1.6; }
-    .price { color: #d28aff; font-size: 15px; font-weight: 800; margin: 12px 0; }
-
-    .buy {
-      display: block;
-      text-align: center;
-      padding: 10px;
-      border-radius: 9px;
-      background: linear-gradient(110deg,#7926d9,#bb3cff);
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .buy:hover { filter: brightness(1.2); }
-
-    .about {
-      background: linear-gradient(120deg,#21113b,#120d20);
-      border: 1px solid #42265e;
-      border-radius: 20px;
-      padding: 28px;
-      margin: 45px 0;
-    }
-
-    .about h2 { font-size: 21px; margin-bottom: 10px; }
-    .about p { color: #c5bad7; font-size: 12px; line-height: 1.9; }
-
-    .contact {
-      text-align: center;
-      padding: 35px 20px;
-      border-radius: 20px;
-      background: #171025;
-      border: 1px solid #42265e;
-      margin-bottom: 45px;
-    }
-
-    .contact h2 { font-size: 23px; margin-bottom: 10px; }
-    .contact p { color: var(--muted); font-size: 12px; margin-bottom: 20px; }
-
-    footer {
-      border-top: 1px solid #302044;
-      padding: 25px 0;
-      text-align: center;
-      color: #8e849f;
-      font-size: 10px;
-    }
-
-    .wa-float {
-      position: fixed;
-      z-index: 20;
-      bottom: 20px;
-      right: 20px;
-      width: 55px;
-      height: 55px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: #20c66a;
-      color: white;
-      font-size: 26px;
-      box-shadow: 0 0 20px #20c66a77;
-    }
-
-    .empty { display: none; color: #bdb1cf; font-size: 13px; padding: 15px 0; }
-
-    @media(max-width:800px) {
-      nav { display: none; }
-      .hero { padding: 28px 22px; min-height: 330px; }
-      .features { grid-template-columns: 1fr; }
-      .products { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
-      .product img { height: 125px; }
-      .section-title h2 { font-size: 19px; }
-    }
-
-    @media(max-width:380px) {
-      .brand { font-size: 16px; }
-      .admin-btn { padding: 9px 11px; }
-      .product-info { padding: 11px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIEMM STORE | Digital Store</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--purple:#9b4dff;--dark:#090711;--card:#171322;--muted:#aaa1bb}
+body{
+ background:#090711;color:white;
+ font-family:Arial,sans-serif;
+ min-height:100vh;
+}
+header{
+ display:flex;align-items:center;justify-content:space-between;
+ padding:16px 6%;background:#100b1b;
+ border-bottom:1px solid #392052;
+ position:sticky;top:0;z-index:10;
+}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-icon{
+ width:43px;height:43px;border-radius:13px;
+ background:linear-gradient(135deg,#b66aff,#6215bd);
+ display:flex;align-items:center;justify-content:center;
+ font-weight:900;font-size:19px;
+ box-shadow:0 0 18px #9b4dff77;
+}
+.logo h2{font-size:19px}
+.logo span{color:#bd82ff}
+nav{display:flex;gap:8px}
+nav button{
+ border:0;background:transparent;color:#c7bdd6;
+ padding:10px 13px;border-radius:9px;
+ cursor:pointer;font-weight:bold;
+}
+nav button.active,nav button:hover{
+ background:#772bc2;color:white;
+}
+main{max-width:1150px;margin:auto;padding:28px 6%}
+.page{display:none}
+.page.active{display:block}
+.hero{
+ background:linear-gradient(120deg,#291044,#111020 70%);
+ border:1px solid #6734a0;
+ border-radius:22px;padding:38px 28px;
+ overflow:hidden;position:relative;
+}
+.hero:after{
+ content:"PM";position:absolute;right:25px;top:5px;
+ font-size:145px;font-weight:900;
+ color:#ffffff09;
+}
+.hero small{color:#c58bff;font-weight:bold;letter-spacing:2px}
+.hero h1{font-size:38px;margin:17px 0 12px}
+.hero h1 span{color:#bd82ff}
+.hero p{color:#d2c7df;line-height:1.7;max-width:520px}
+.btn{
+ display:inline-block;margin-top:22px;
+ padding:13px 21px;border-radius:10px;
+ background:linear-gradient(120deg,#a64cff,#6c21bd);
+ color:white;text-decoration:none;font-weight:bold;
+ border:0;cursor:pointer;
+}
+.section-title{margin:30px 0 18px}
+.section-title h2{font-size:23px}
+.section-title p{color:var(--muted);margin-top:7px}
+.stats{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:14px;margin-top:23px;
+}
+.stat{
+ background:var(--card);border:1px solid #38234f;
+ padding:20px;border-radius:14px;
+}
+.stat strong{font-size:22px;color:#c18aff}
+.stat p{font-size:13px;color:var(--muted);margin-top:7px}
+.products{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:17px;
+}
+.product{
+ background:var(--card);border:1px solid #342442;
+ border-radius:16px;overflow:hidden;
+ transition:.25s;
+}
+.product:hover{
+ transform:translateY(-5px);
+ border-color:#a45aff;
+ box-shadow:0 8px 25px #8c36ff22;
+}
+.product img{
+ width:100%;height:145px;object-fit:cover;
+ display:block;
+}
+.product-info{padding:16px}
+.product-info h3{font-size:17px}
+.product-info p{
+ color:var(--muted);font-size:13px;
+ line-height:1.5;margin:8px 0;
+}
+.price{color:#d3a4ff;font-size:19px;font-weight:bold}
+.product .btn{
+ width:100%;text-align:center;
+ padding:11px;margin-top:13px;
+}
+.panel{
+ background:var(--card);border:1px solid #39234e;
+ border-radius:16px;padding:22px;margin-top:18px;
+}
+.panel p{color:#c3b8d1;line-height:1.8;margin-top:9px}
+footer{
+ text-align:center;padding:28px 15px;
+ border-top:1px solid #30203d;
+ color:#968aa5;font-size:13px;margin-top:45px;
+}
+footer b{color:#bd82ff}
+@media(max-width:700px){
+ header{padding:12px 4%;flex-wrap:wrap;gap:12px}
+ nav{width:100%;justify-content:space-between}
+ nav button{padding:9px 10px;font-size:12px}
+ main{padding:20px 4%}
+ .hero{padding:28px 20px}
+ .hero h1{font-size:30px}
+ .hero:after{font-size:90px;top:20px}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .product img{height:110px}
+ .product-info{padding:12px}
+ .product-info h3{font-size:14px}
+ .product-info p{font-size:12px}
+ .price{font-size:16px}
+ .stats{gap:8px}
+ .stat{padding:12px}
+ .stat strong{font-size:17px}
+ .stat p{font-size:11px}
+}
+@media(max-width:360px){
+ .products{grid-template-columns:1fr}
+}
+</style>
 </head>
-
 <body>
 
 <header>
-  <div class="container navbar">
-    <a class="brand" href="#">
-      <span class="logo">♛</span>
-      <span>PIEMM <span style="color:#c77aff">STORE</span></span>
-    </a>
-    <nav>
-      <a href="#">Beranda</a>
-      <a href="#produk">Produk</a>
-      <a href="#tentang">Tentang</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
-    <a class="admin-btn" href="https://wa.me/6285603498372">Hubungi Admin</a>
-  </div>
+ <div class="logo">
+  <div class="logo-icon">PM</div>
+  <h2>PIEMM <span>STORE</span></h2>
+ </div>
+ <nav>
+  <button class="active" onclick="showPage('home',this)">Beranda</button>
+  <button onclick="showPage('produk',this)">Produk</button>
+  <button onclick="showPage('bantuan',this)">Bantuan</button>
+ </nav>
 </header>
 
-<main class="container">
+<main>
 
-  <section class="hero">
-    <div class="hero-content">
-      <span class="eyebrow">✦ DIGITAL STORE TERPERCAYA</span>
-      <h1>SELAMAT DATANG DI <span>PIEMM STORE</span></h1>
-      <p>Temukan berbagai produk digital dan layanan terbaik dengan proses pemesanan mudah, cepat, dan praktis.</p>
-      <div class="hero-actions">
-        <a href="#produk" class="primary">Lihat Produk →</a>
-        <a href="https://wa.me/6285603498372" class="secondary">Chat Admin</a>
-      </div>
-    </div>
-  </section>
+<!-- DASHBOARD 1 -->
+<section id="home" class="page active">
+ <div class="hero">
+  <small>WELCOME TO PIEMM STORE</small>
+  <h1>Solusi Digital<br><span>Untuk Kamu!</span></h1>
+  <p>
+   Selamat datang di PIEMM STORE.
+   Temukan berbagai produk digital dan layanan
+   sosial media dengan harga terjangkau.
+  </p>
+  <button class="btn" onclick="showPage('produk')">
+   Lihat Produk →
+  </button>
+ </div>
 
-  <section class="features">
-    <div class="feature">
-      <div class="feature-icon">⚡</div>
-      <div><strong>Proses Praktis</strong><small>Pemesanan mudah dan cepat</small></div>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">🛡️</div>
-      <div><strong>Pelayanan Admin</strong><small>Dibantu langsung oleh admin</small></div>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">💜</div>
-      <div><strong>Banyak Pilihan</strong><small>Berbagai layanan digital</small></div>
-    </div>
-  </section>
+ <div class="stats">
+  <div class="stat">
+   <strong>7+</strong>
+   <p>Produk Digital</p>
+  </div>
+  <div class="stat">
+   <strong>24/7</strong>
+   <p>Layanan Pesanan</p>
+  </div>
+  <div class="stat">
+   <strong>Murah</strong>
+   <p>Harga Bersahabat</p>
+  </div>
+ </div>
 
-  <section id="produk">
-    <div class="section-title">
-      <div>
-        <h2>Produk & Layanan</h2>
-        <p>Pilih produk yang kamu butuhkan</p>
-      </div>
-    </div>
+ <div class="section-title">
+  <h2>Kenapa PIEMM STORE?</h2>
+  <p>Belanja digital lebih mudah dan praktis.</p>
+ </div>
 
-    <input class="search" id="search" type="search" placeholder="🔍 Cari produk yang kamu inginkan...">
+ <div class="panel">
+  <h3>⚡ Harga Terjangkau</h3>
+  <p>Nikmati berbagai pilihan produk dengan harga ramah di kantong.</p>
+ </div>
+ <div class="panel">
+  <h3>💜 Pelayanan Mudah</h3>
+  <p>Pemesanan langsung melalui WhatsApp admin.</p>
+ </div>
+</section>
 
-    <h3 class="category-title">NOKOS</h3>
-    <div class="products">
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=700&q=85" alt="Produk NOKOS">
-        <div class="product-info">
-          <h3>NOKOS</h3>
-          <p>Layanan nomor kosong. Hubungi admin untuk informasi ketersediaan.</p>
-          <div class="price">Rp3.000</div>
-          <a class="buy" href="#" onclick="order('NOKOS','Rp3.000');return false;">Pesan Sekarang</a>
-        </div>
-      </article>
-    </div>
+<!-- DASHBOARD 2 -->
+<section id="produk" class="page">
+ <div class="section-title">
+  <h2>Katalog Produk</h2>
+  <p>Pilih produk yang ingin kamu pesan.</p>
+ </div>
 
-    <h3 class="category-title">SUNTIK SOSMED</h3>
-    <div class="products">
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=700&q=85" alt="TikTok">
-        <div class="product-info">
-          <h3>Like TikTok</h3>
-          <p>Layanan penambahan like TikTok.</p>
-          <div class="price">Hubungi Admin</div>
-          <a class="buy" href="#" onclick="order('Like TikTok','Hubungi Admin');return false;">Pesan Sekarang</a>
-        </div>
-      </article>
+ <div class="products" id="productList"></div>
+</section>
 
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=700&q=85" alt="Followers TikTok">
-        <div class="product-info">
-          <h3>Followers TikTok</h3>
-          <p>Layanan penambahan followers TikTok.</p>
-          <div class="price">Hubungi Admin</div>
-          <a class="buy" href="#" onclick="order('Followers TikTok','Hubungi Admin');return false;">Pesan Sekarang</a>
-        </div>
-      </article>
+<!-- DASHBOARD 3 -->
+<section id="bantuan" class="page">
+ <div class="hero">
+  <small>PIEMM STORE SUPPORT</small>
+  <h1>Butuh <span>Bantuan?</span></h1>
+  <p>Hubungi admin untuk bertanya tentang produk, harga, dan pemesanan.</p>
+  <a class="btn" href="https://wa.me/6285603498372">
+   Hubungi Admin →
+  </a>
+ </div>
 
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?auto=format&fit=crop&w=700&q=85" alt="Instagram">
-        <div class="product-info">
-          <h3>Like Instagram</h3>
-          <p>Layanan penambahan like Instagram.</p>
-          <div class="price">Hubungi Admin</div>
-          <a class="buy" href="#" onclick="order('Like Instagram','Hubungi Admin');return false;">Pesan Sekarang</a>
-        </div>
-      </article>
-
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85" alt="Followers Instagram">
-        <div class="product-info">
-          <h3>Followers Instagram</h3>
-          <p>Layanan penambahan followers Instagram.</p>
-          <div class="price">Hubungi Admin</div>
-          <a class="buy" href="#" onclick="order('Followers Instagram','Hubungi Admin');return false;">Pesan Sekarang</a>
-        </div>
-      </article>
-    </div>
-
-    <h3 class="category-title">SUNTIK SALURAN WA</h3>
-    <div class="products">
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=700&q=85" alt="WhatsApp">
-        <div class="product-info">
-          <h3>Suntik Saluran WA</h3>
-          <p>Layanan suntik saluran WhatsApp.</p>
-          <div class="price">Rp1.000</div>
-          <a class="buy" href="#" onclick="order('Suntik Saluran WA','Rp1.000');return false;">Pesan Sekarang</a>
-        </div>
-      </article>
-    </div>
-
-    <h3 class="category-title">JASA DESAIN</h3>
-    <div class="products">
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=700&q=85" alt="Desain grafis">
-        <div class="product-info">
-          <h3>Desain Logo</h3>
-          <p>Jasa pembuatan desain logo sesuai permintaan.</p>
-          <div class="price">Hubungi Admin</div>
-          <a class="buy" href="#" onclick="order('Jasa Desain Logo','Hubungi Admin');return false;">Pesan Sekarang</a>
-        </div>
-      </article>
-
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=700&q=85" alt="Desain poster">
-        <div class="product-info">
-          <h3>Desain Poster & Banner</h3>
-          <p>Desain poster dan banner sesuai kebutuhan.</p>
-          <div class="price">Hubungi Admin</div>
-          <a class="buy" href="#" onclick="order('Desain Poster dan Banner','Hubungi Admin');return false;">Pesan Sekarang</a>
-        </div>
-      </article>
-    </div>
-
-    <h3 class="category-title">JASA DIGITAL</h3>
-    <div class="products">
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=85" alt="Produk digital">
-        <div class="product-info">
-          <h3>Produk Digital</h3>
-          <p>Berbagai pilihan produk digital. Tanyakan kepada admin.</p>
-          <div class="price">Hubungi Admin</div>
-          <a class="buy" href="#" onclick="order('Produk Digital','Hubungi Admin');return false;">Pesan Sekarang</a>
-        </div>
-      </article>
-
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&q=85" alt="Jasa digital">
-        <div class="product-info">
-          <h3>Jasa Digital Lainnya</h3>
-          <p>Konsultasikan kebutuhan layanan digital kamu.</p>
-          <div class="price">Hubungi Admin</div>
-          <a class="buy" href="#" onclick="order('Jasa Digital Lainnya','Hubungi Admin');return false;">Pesan Sekarang</a>
-        </div>
-      </article>
-    </div>
-
-    <h3 class="category-title">LAINNYA</h3>
-    <div class="products">
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=700&q=85" alt="Layanan lainnya">
-        <div class="product-info">
-          <h3>Layanan Lainnya</h3>
-          <p>Belum menemukan yang kamu cari? Tanya admin.</p>
-          <div class="price">Hubungi Admin</div>
-          <a class="buy" href="#" onclick="order('Layanan Lainnya','Hubungi Admin');return false;">Pesan Sekarang</a>
-        </div>
-      </article>
-    </div>
-    <p class="empty" id="empty">Produk tidak ditemukan.</p>
-  </section>
-
-  <section class="about" id="tentang">
-    <h2>Tentang PIEMM STORE</h2>
-    <p>PIEMM STORE menyediakan berbagai produk dan layanan digital untuk membantu kebutuhan online kamu. Kami berusaha memberikan pelayanan yang mudah, praktis, dan responsif. Untuk informasi harga, stok, dan proses pemesanan, silakan hubungi admin.</p>
-  </section>
-
-  <section class="contact" id="kontak">
-    <h2>Butuh Bantuan?</h2>
-    <p>Hubungi admin PIEMM STORE untuk pemesanan dan informasi produk.</p>
-    <a class="primary" href="https://wa.me/6285603498372">Chat Admin WhatsApp</a>
-  </section>
+ <div class="section-title">
+  <h2>Informasi Toko</h2>
+ </div>
+ <div class="panel">
+  <h3>PIEMM STORE</h3>
+  <p>Tempat belanja produk digital dan layanan sosial media.</p>
+  <p>Jam pelayanan: Setiap hari.</p>
+  <p>WhatsApp Admin: 085603498372</p>
+ </div>
+</section>
 
 </main>
 
 <footer>
-  © 2026 PIEMM STORE. All Rights Reserved.
+ © 2026 <b>PIEMM STORE</b> · All Rights Reserved
 </footer>
 
-<a class="wa-float" href="https://wa.me/6285603498372" aria-label="WhatsApp Admin">☏</a>
-
 <script>
-  const admin = "6285603498372";
+const products = [
+ {
+  name:"Nokos",
+  price:3000,
+  image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600",
+  desc:"Nomor kosong untuk kebutuhan digital."
+ },
+ {
+  name:"Link TikTok",
+  price:1000,
+  image:"https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=600",
+  desc:"Layanan link TikTok."
+ },
+ {
+  name:"Follower TikTok",
+  price:1000,
+  image:"https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600",
+  desc:"Layanan follower TikTok."
+ },
+ {
+  name:"Link Instagram",
+  price:1000,
+  image:"https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600",
+  desc:"Layanan link Instagram."
+ },
+ {
+  name:"Follower Instagram",
+  price:1000,
+  image:"https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600",
+  desc:"Layanan follower Instagram."
+ },
+ {
+  name:"Jasa Desain",
+  price:5000,
+  image:"https://images.unsplash.com/photo-1547658719-da2b51169166?w=600",
+  desc:"Jasa desain kreatif sesuai kebutuhan."
+ },
+ {
+  name:"Ebook Produk Digital",
+  price:5000,
+  image:"https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600",
+  desc:"Pilihan ebook produk digital."
+ }
+];
 
-  function order(product, price) {
-    const message =
-      "Halo Admin PIEMM STORE, saya ingin memesan:\n\n" +
-      "Produk: " + product + "\n" +
-      "Harga: " + price + "\n\n" +
-      "Mohon informasi selanjutnya. Terima kasih.";
-    window.open("https://wa.me/" + admin + "?text=" + encodeURIComponent(message), "_blank");
-  }
+const list=document.getElementById("productList");
 
-  const search = document.getElementById("search");
-  const products = document.querySelectorAll(".product");
-  const categories = document.querySelectorAll(".category-title");
-  const empty = document.getElementById("empty");
+products.forEach(p=>{
+ const card=document.createElement("div");
+ card.className="product";
+ const message=encodeURIComponent(
+  "Halo PIEMM STORE, saya ingin memesan "+p.name+
+  " dengan harga Rp"+p.price.toLocaleString("id-ID")
+ );
+ card.innerHTML=`
+  <img src="${p.image}" alt="${p.name}" loading="lazy">
+  <div class="product-info">
+   <h3>${p.name}</h3>
+   <p>${p.desc}</p>
+   <div class="price">Rp${p.price.toLocaleString("id-ID")}</div>
+   <a class="btn" href="https://wa.me/6285603498372?text=${message}">
+    Pesan Sekarang
+   </a>
+  </div>`;
+ list.appendChild(card);
+});
 
-  search.addEventListener("input", function() {
-    const keyword = this.value.toLowerCase();
-    let found = 0;
-
-    products.forEach(function(product) {
-      const match = product.innerText.toLowerCase().includes(keyword);
-      product.style.display = match ? "" : "none";
-      if (match) found++;
-    });
-
-    categories.forEach(function(category) {
-      const section = category.nextElementSibling;
-      const visible = section && Array.from(section.querySelectorAll(".product"))
-        .some(product => product.style.display !== "none");
-      category.style.display = visible ? "" : "none";
-    });
-
-    empty.style.display = found === 0 ? "block" : "none";
-  });
+function showPage(id,button){
+ document.querySelectorAll(".page").forEach(p=>{
+  p.classList.remove("active");
+ });
+ document.getElementById(id).classList.add("active");
+ document.querySelectorAll("nav button").forEach(b=>{
+  b.classList.remove("active");
+ });
+ if(button) button.classList.add("active");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
 </script>
 
 </body>
