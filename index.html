@@ -4,329 +4,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PIEMM STORE - Toko Digital</title>
-
+<title>PIEMM STORE</title>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #08050e;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-header {
-  background: linear-gradient(135deg,#180027,#08050e);
-  text-align: center;
-  padding: 65px 15px;
-  border-bottom: 2px solid #b000ff;
-}
-
-header h1 {
-  color: #d36aff;
-  font-size: 36px;
-  margin-bottom: 12px;
-  text-shadow: 0 0 20px #a000ff;
-}
-
-header p {
-  color: #ddd;
-  font-size: 17px;
-  margin-bottom: 18px;
-}
-
-.tagline {
-  color: #d78aff;
-  font-weight: bold;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 35px 18px;
-}
-
-.section-title {
-  text-align: center;
-  color: #d78aff;
-  font-size: 29px;
-  margin: 25px 0 30px;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 17px;
-}
-
-.card {
-  background: linear-gradient(145deg,#1b1029,#0c0713);
-  border: 1px solid #a000ff;
-  border-radius: 23px;
-  padding: 22px 12px;
-  text-align: center;
-  box-shadow: 0 0 12px #8500c8;
-  transition: .3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 22px #c000ff;
-}
-
-.product-image {
-  width: 100%;
-  height: 125px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-  background: radial-gradient(circle,#542078,#170b25 70%);
-  border-radius: 16px;
-}
-
-.product-image img {
-  width: 75px;
-  height: 75px;
-  object-fit: contain;
-}
-
-.product-image .gift {
-  font-size: 65px;
-}
-
-.card h3 {
-  font-size: 17px;
-  margin: 12px 0;
-}
-
-.card p {
-  color: #c9c1d0;
-  font-size: 14px;
-  margin-bottom: 14px;
-}
-
-.price {
-  color: #dc8aff;
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 18px;
-}
-
-.buy {
-  display: block;
-  text-decoration: none;
-  background: linear-gradient(90deg,#8500e9,#d000ff);
-  color: white;
-  padding: 14px 5px;
-  border-radius: 35px;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.buy:hover {
-  opacity: .85;
-}
-
-.about {
-  margin-top: 45px;
-  padding: 28px 20px;
-  text-align: center;
-  background: #160b22;
-  border: 1px solid #8500c8;
-  border-radius: 20px;
-}
-
-.about h2 {
-  color: #d78aff;
-  margin-bottom: 15px;
-}
-
-.about p {
-  color: #ddd;
-  line-height: 1.8;
-}
-
-.contact {
-  text-align: center;
-  margin-top: 30px;
-  padding: 25px;
-}
-
-.contact h2 {
-  color: #d78aff;
-  margin-bottom: 15px;
-}
-
-.contact a {
-  display: inline-block;
-  text-decoration: none;
-  color: white;
-  background: #168d49;
-  padding: 14px 25px;
-  border-radius: 30px;
-  font-weight: bold;
-}
-
-footer {
-  background: #100819;
-  border-top: 1px solid #7900a8;
-  text-align: center;
-  padding: 22px 10px;
-  color: #aaa;
-  font-size: 13px;
-}
-
-@media (max-width: 360px) {
-  .products {
-    gap: 10px;
-  }
-
-  .card {
-    padding: 15px 8px;
-  }
-
-  .card h3 {
-    font-size: 14px;
-  }
-
-  .price {
-    font-size: 17px;
-  }
-
-  header h1 {
-    font-size: 28px;
-  }
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#090611;color:white;font-family:Arial,sans-serif}
+header{padding:22px;background:#160d27;text-align:center;border-bottom:2px solid #9b4dff}
+header h1{color:#b66aff;font-size:28px}
+header p{color:#ccc;margin-top:7px}
+.hero{text-align:center;padding:35px 18px}
+.hero h2{font-size:27px;color:#c58aff}
+.hero p{color:#ccc;margin-top:12px;line-height:1.6}
+.container{padding:15px;max-width:650px;margin:auto}
+.title{color:#c58aff;margin:20px 0 15px}
+.product{background:#1b1230;border:1px solid #7135a8;border-radius:14px;padding:18px;margin-bottom:15px}
+.product h3{color:#d4a5ff;margin-bottom:8px}
+.product p{color:#ccc;font-size:14px;line-height:1.5}
+.btn{display:block;text-align:center;background:#922fff;color:white;text-decoration:none;padding:12px;border-radius:9px;margin-top:14px;font-weight:bold}
+.btn:hover{background:#7020c5}
+footer{text-align:center;padding:25px;color:#aaa;font-size:13px}
 </style>
 </head>
-
 <body>
 
 <header>
-  <h1>👑 PIEMM STORE</h1>
-  <p>Top Up & Jasa Digital Terpercaya</p>
-  <div class="tagline">⚡ Cepat • Aman • Murah</div>
+<h1>💜 PIEMM STORE</h1>
+<p>Solusi Kebutuhan Digital Anda</p>
 </header>
 
+<section class="hero">
+<h2>WELCOME TO PIEMM STORE</h2>
+<p>Selamat datang di toko digital kami!<br>
+Menyediakan berbagai layanan digital dengan harga terjangkau dan pelayanan terbaik.</p>
+</section>
+
 <div class="container">
+<h2 class="title">🔥 PRODUK KAMI</h2>
 
-  <h2 class="section-title">🔥 PRODUK KAMI</h2>
+<div class="product">
+<h3>📱 NOKOS</h3>
+<p>Tersedia berbagai pilihan nomor kosong untuk kebutuhan digital Anda.</p>
+<a class="btn" href="https://wa.me/6285603498372?text=Halo%20PIEMM%20STORE%2C%20saya%20ingin%20pesan%20NOKOS">PESAN SEKARANG</a>
+</div>
 
-  <div class="products">
+<div class="product">
+<h3>💉 SUNTIK SOSMED</h3>
+<p>Layanan tambah followers, likes, dan kebutuhan media sosial.</p>
+<a class="btn" href="https://wa.me/6285603498372?text=Halo%20PIEMM%20STORE%2C%20saya%20ingin%20pesan%20SUNTIK%20SOSMED">PESAN SEKARANG</a>
+</div>
 
-    <div class="card">
-      <div class="product-image">
-        <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok">
-      </div>
-      <h3>Suntik Follow TikTok</h3>
-      <p>100 - 1000 Follow</p>
-      <div class="price">Mulai Rp7.000</div>
-      <a class="buy" href="#" onclick="order('Suntik Follow TikTok','Rp7.000');return false;">Beli Sekarang</a>
-    </div>
+<div class="product">
+<h3>🎮 JASA JOKI</h3>
+<p>Layanan jasa joki dengan proses pengerjaan manual.</p>
+<a class="btn" href="https://wa.me/6285603498372?text=Halo%20PIEMM%20STORE%2C%20saya%20ingin%20pesan%20JASA%20JOKI">PESAN SEKARANG</a>
+</div>
 
-    <div class="card">
-      <div class="product-image">
-        <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok">
-      </div>
-      <h3>Suntik Like TikTok</h3>
-      <p>100 - 1000 Like</p>
-      <div class="price">Mulai Rp7.000</div>
-      <a class="buy" href="#" onclick="order('Suntik Like TikTok','Rp7.000');return false;">Beli Sekarang</a>
-    </div>
-
-    <div class="card">
-      <div class="product-image">
-        <img src="https://cdn.simpleicons.org/whatsapp/FFFFFF" alt="WhatsApp">
-      </div>
-      <h3>Suntik Saluran WA</h3>
-      <p>100 - 1000 Member</p>
-      <div class="price">Mulai Rp1.000</div>
-      <a class="buy" href="#" onclick="order('Suntik Saluran WhatsApp','Rp1.000');return false;">Beli Sekarang</a>
-    </div>
-
-    <div class="card">
-      <div class="product-image">
-        <img src="https://cdn.simpleicons.org/instagram/FFFFFF" alt="Instagram">
-      </div>
-      <h3>Suntik Follow Instagram</h3>
-      <p>100 - 1000 Follow</p>
-      <div class="price">Mulai Rp8.000</div>
-      <a class="buy" href="#" onclick="order('Suntik Follow Instagram','Rp8.000');return false;">Beli Sekarang</a>
-    </div>
-
-    <div class="card">
-      <div class="product-image">
-        <img src="https://cdn.simpleicons.org/instagram/FFFFFF" alt="Instagram">
-      </div>
-      <h3>Suntik Like Instagram</h3>
-      <p>100 - 1000 Like</p>
-      <div class="price">Mulai Rp8.000</div>
-      <a class="buy" href="#" onclick="order('Suntik Like Instagram','Rp8.000');return false;">Beli Sekarang</a>
-    </div>
-
-    <div class="card">
-      <div class="product-image">
-        <span class="gift">🎁</span>
-      </div>
-      <h3>Paket Digital Lengkap</h3>
-      <p>Paket layanan pilihan</p>
-      <div class="price">Mulai Rp15.000</div>
-      <a class="buy" href="#" onclick="order('Paket Digital Lengkap','Rp15.000');return false;">Beli Sekarang</a>
-    </div>
-
-  </div>
-
-  <div class="about">
-    <h2>💜 TENTANG KAMI</h2>
-    <p>
-      Selamat datang di PIEMM STORE!
-      Kami menyediakan berbagai layanan digital
-      dengan harga terjangkau dan pelayanan ramah.
-      Pesanan diproses secara manual oleh admin.
-      Terima kasih telah mempercayai PIEMM STORE.
-    </p>
-  </div>
-
-  <div class="contact">
-    <h2>📞 HUBUNGI ADMIN</h2>
-    <p style="margin-bottom:18px;color:#ccc">
-      Butuh bantuan? Hubungi admin kami.
-    </p>
-    <a href="https://wa.me/6285603498372">
-      Chat WhatsApp Admin
-    </a>
-  </div>
+<div class="product">
+<h3>🛒 PRODUK DIGITAL</h3>
+<p>Berbagai kebutuhan produk digital tersedia di PIEMM STORE.</p>
+<a class="btn" href="https://wa.me/6285603498372?text=Halo%20PIEMM%20STORE%2C%20saya%20ingin%20bertanya%20tentang%20produk%20digital">TANYA ADMIN</a>
+</div>
 
 </div>
 
 <footer>
-  © 2026 PIEMM STORE. All Rights Reserved.
-  <br><br>
-  ⚡ Cepat • Aman • Murah
+© 2026 PIEMM STORE<br>
+Terima kasih telah berbelanja 💜
 </footer>
 
-<script>
-function order(product, price) {
-  const phone = "6285603498372";
-  const message =
-    "Halo Admin PIEMM STORE, saya ingin memesan:\n\n" +
-    "Produk: " + product + "\n" +
-    "Harga mulai: " + price + "\n\n" +
-    "Mohon informasi cara pemesanan. Terima kasih.";
-
-  window.open(
-    "https://wa.me/" + phone + "?text=" +
-    encodeURIComponent(message),
-    "_blank"
-  );
-}
-</script>
-
 </body>
-                            </html>
-                              
+  </html>
+  
