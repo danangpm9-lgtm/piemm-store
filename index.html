@@ -1,166 +1,189 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PIEMM STORE</title>
+<title>PIEMM STORE - Toko Digital</title>
 
 <style>
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: #08050d;
+  background: #08050e;
   color: white;
   font-family: Arial, sans-serif;
 }
 
 header {
+  background: linear-gradient(135deg,#180027,#08050e);
   text-align: center;
-  padding: 35px 15px;
-  background: linear-gradient(135deg,#17002e,#08050d);
-  border-bottom: 2px solid #a000ff;
+  padding: 65px 15px;
+  border-bottom: 2px solid #b000ff;
 }
 
 header h1 {
-  font-size: 38px;
-  color: #c15aff;
-  text-shadow: 0 0 15px #a000ff;
+  color: #d36aff;
+  font-size: 36px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 20px #a000ff;
 }
 
 header p {
-  margin-top: 12px;
   color: #ddd;
+  font-size: 17px;
+  margin-bottom: 18px;
 }
 
 .tagline {
-  margin-top: 15px;
-  color: #d68aff;
+  color: #d78aff;
   font-weight: bold;
 }
 
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 25px 15px;
+  padding: 35px 18px;
 }
 
-.judul {
+.section-title {
   text-align: center;
-  margin: 20px 0;
-  color: #d18aff;
-  font-size: 25px;
+  color: #d78aff;
+  font-size: 29px;
+  margin: 25px 0 30px;
 }
 
-.produk {
+.products {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 17px;
 }
 
 .card {
-  background: linear-gradient(145deg,#190d29,#09050f);
-  border: 1px solid #9d00ff;
-  border-radius: 16px;
-  padding: 20px 12px;
+  background: linear-gradient(145deg,#1b1029,#0c0713);
+  border: 1px solid #a000ff;
+  border-radius: 23px;
+  padding: 22px 12px;
   text-align: center;
-  box-shadow: 0 0 12px #6200a8;
+  box-shadow: 0 0 12px #8500c8;
   transition: .3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 22px #a000ff;
+  transform: translateY(-6px);
+  box-shadow: 0 0 22px #c000ff;
 }
 
-.foto {
-  height: 115px;
+.product-image {
+  width: 100%;
+  height: 125px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 75px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
+  background: radial-gradient(circle,#542078,#170b25 70%);
+  border-radius: 16px;
+}
+
+.product-image img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+}
+
+.product-image .gift {
+  font-size: 65px;
 }
 
 .card h3 {
   font-size: 17px;
-  margin-bottom: 10px;
+  margin: 12px 0;
 }
 
 .card p {
-  color: #ccc;
+  color: #c9c1d0;
   font-size: 14px;
-  margin: 7px 0;
+  margin-bottom: 14px;
 }
 
-.harga {
-  color: #e0a2ff !important;
-  font-size: 19px !important;
+.price {
+  color: #dc8aff;
+  font-size: 22px;
   font-weight: bold;
-  margin: 14px 0 !important;
+  margin-bottom: 18px;
 }
 
-.beli {
+.buy {
   display: block;
   text-decoration: none;
-  background: linear-gradient(90deg,#7900d9,#c000ff);
+  background: linear-gradient(90deg,#8500e9,#d000ff);
   color: white;
-  padding: 12px;
+  padding: 14px 5px;
+  border-radius: 35px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.buy:hover {
+  opacity: .85;
+}
+
+.about {
+  margin-top: 45px;
+  padding: 28px 20px;
+  text-align: center;
+  background: #160b22;
+  border: 1px solid #8500c8;
+  border-radius: 20px;
+}
+
+.about h2 {
+  color: #d78aff;
+  margin-bottom: 15px;
+}
+
+.about p {
+  color: #ddd;
+  line-height: 1.8;
+}
+
+.contact {
+  text-align: center;
+  margin-top: 30px;
+  padding: 25px;
+}
+
+.contact h2 {
+  color: #d78aff;
+  margin-bottom: 15px;
+}
+
+.contact a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: #168d49;
+  padding: 14px 25px;
   border-radius: 30px;
   font-weight: bold;
-  margin-top: 12px;
-}
-
-.beli:hover {
-  background: #e000ff;
-}
-
-.keunggulan {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 30px 10px;
-  text-align: center;
-  color: #d7a2ff;
-}
-
-.admin {
-  text-align: center;
-  background: #170b24;
-  padding: 25px 10px;
-  border-top: 1px solid #a000ff;
-  margin-top: 20px;
-}
-
-.admin a {
-  display: inline-block;
-  margin-top: 15px;
-  background: #8b00dc;
-  color: white;
-  text-decoration: none;
-  padding: 13px 25px;
-  border-radius: 30px;
 }
 
 footer {
+  background: #100819;
+  border-top: 1px solid #7900a8;
   text-align: center;
-  padding: 20px;
-  color: #999;
+  padding: 22px 10px;
+  color: #aaa;
   font-size: 13px;
 }
 
-@media(max-width:700px) {
-  .produk {
-    grid-template-columns: repeat(2,1fr);
+@media (max-width: 360px) {
+  .products {
     gap: 10px;
-  }
-
-  header h1 {
-    font-size: 30px;
   }
 
   .card {
@@ -168,12 +191,15 @@ footer {
   }
 
   .card h3 {
-    font-size: 15px;
+    font-size: 14px;
   }
 
-  .foto {
-    font-size: 55px;
-    height: 90px;
+  .price {
+    font-size: 17px;
+  }
+
+  header h1 {
+    font-size: 28px;
   }
 }
 </style>
@@ -189,79 +215,118 @@ footer {
 
 <div class="container">
 
-<h2 class="judul">🔥 PRODUK KAMI</h2>
+  <h2 class="section-title">🔥 PRODUK KAMI</h2>
 
-<div class="produk">
+  <div class="products">
 
-<div class="card">
-  <div class="foto">🎵</div>
-  <h3>Suntik Follow TikTok</h3>
-  <p>100 - 1000 Follow</p>
-  <p class="harga">Mulai Rp7.000</p>
-  <a class="beli" href="https://wa.me/6285603498372?text=Halo%20PIEMM%20STORE,%20saya%20ingin%20membeli%20follow%20TikTok">Beli Sekarang</a>
-</div>
+    <div class="card">
+      <div class="product-image">
+        <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok">
+      </div>
+      <h3>Suntik Follow TikTok</h3>
+      <p>100 - 1000 Follow</p>
+      <div class="price">Mulai Rp7.000</div>
+      <a class="buy" href="#" onclick="order('Suntik Follow TikTok','Rp7.000');return false;">Beli Sekarang</a>
+    </div>
 
-<div class="card">
-  <div class="foto">❤️</div>
-  <h3>Suntik Like TikTok</h3>
-  <p>100 - 1000 Like</p>
-  <p class="harga">Mulai Rp7.000</p>
-  <a class="beli" href="https://wa.me/6285603498372?text=Halo,%20saya%20ingin%20membeli%20like%20TikTok">Beli Sekarang</a>
-</div>
+    <div class="card">
+      <div class="product-image">
+        <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok">
+      </div>
+      <h3>Suntik Like TikTok</h3>
+      <p>100 - 1000 Like</p>
+      <div class="price">Mulai Rp7.000</div>
+      <a class="buy" href="#" onclick="order('Suntik Like TikTok','Rp7.000');return false;">Beli Sekarang</a>
+    </div>
 
-<div class="card">
-  <div class="foto">✈️</div>
-  <h3>Suntik Saluran WA</h3>
-  <p>100 - 1000 Member</p>
-  <p class="harga">Mulai Rp1.000</p>
-  <a class="beli" href="https://wa.me/6285603498372?text=Halo,%20saya%20ingin%20membeli%20member%20saluran%20WA">Beli Sekarang</a>
-</div>
+    <div class="card">
+      <div class="product-image">
+        <img src="https://cdn.simpleicons.org/whatsapp/FFFFFF" alt="WhatsApp">
+      </div>
+      <h3>Suntik Saluran WA</h3>
+      <p>100 - 1000 Member</p>
+      <div class="price">Mulai Rp1.000</div>
+      <a class="buy" href="#" onclick="order('Suntik Saluran WhatsApp','Rp1.000');return false;">Beli Sekarang</a>
+    </div>
 
-<div class="card">
-  <div class="foto">📸</div>
-  <h3>Suntik Follow Instagram</h3>
-  <p>100 - 1000 Follow</p>
-  <p class="harga">Mulai Rp8.000</p>
-  <a class="beli" href="https://wa.me/6285603498372?text=Halo,%20saya%20ingin%20membeli%20follow%20Instagram">Beli Sekarang</a>
-</div>
+    <div class="card">
+      <div class="product-image">
+        <img src="https://cdn.simpleicons.org/instagram/FFFFFF" alt="Instagram">
+      </div>
+      <h3>Suntik Follow Instagram</h3>
+      <p>100 - 1000 Follow</p>
+      <div class="price">Mulai Rp8.000</div>
+      <a class="buy" href="#" onclick="order('Suntik Follow Instagram','Rp8.000');return false;">Beli Sekarang</a>
+    </div>
 
-<div class="card">
-  <div class="foto">💗</div>
-  <h3>Suntik Like Instagram</h3>
-  <p>100 - 1000 Like</p>
-  <p class="harga">Mulai Rp8.000</p>
-  <a class="beli" href="https://wa.me/6285603498372?text=Halo,%20saya%20ingin%20membeli%20like%20Instagram">Beli Sekarang</a>
-</div>
+    <div class="card">
+      <div class="product-image">
+        <img src="https://cdn.simpleicons.org/instagram/FFFFFF" alt="Instagram">
+      </div>
+      <h3>Suntik Like Instagram</h3>
+      <p>100 - 1000 Like</p>
+      <div class="price">Mulai Rp8.000</div>
+      <a class="buy" href="#" onclick="order('Suntik Like Instagram','Rp8.000');return false;">Beli Sekarang</a>
+    </div>
 
-<div class="card">
-  <div class="foto">🎁</div>
-  <h3>Paket Lengkap Sosmed</h3>
-  <p>Follow + Like + Member</p>
-  <p class="harga">Mulai Rp15.000</p>
-  <a class="beli" href="https://wa.me/6285603498372?text=Halo,%20saya%20ingin%20membeli%20paket%20sosmed">Beli Sekarang</a>
-</div>
+    <div class="card">
+      <div class="product-image">
+        <span class="gift">🎁</span>
+      </div>
+      <h3>Paket Digital Lengkap</h3>
+      <p>Paket layanan pilihan</p>
+      <div class="price">Mulai Rp15.000</div>
+      <a class="buy" href="#" onclick="order('Paket Digital Lengkap','Rp15.000');return false;">Beli Sekarang</a>
+    </div>
 
-</div>
+  </div>
 
-<div class="keunggulan">
-  <div>⚡<br>Proses Cepat</div>
-  <div>🛡️<br>Pelayanan Terpercaya</div>
-  <div>💜<br>Harga Bersahabat</div>
-  <div>🎧<br>CS Ramah</div>
-</div>
+  <div class="about">
+    <h2>💜 TENTANG KAMI</h2>
+    <p>
+      Selamat datang di PIEMM STORE!
+      Kami menyediakan berbagai layanan digital
+      dengan harga terjangkau dan pelayanan ramah.
+      Pesanan diproses secara manual oleh admin.
+      Terima kasih telah mempercayai PIEMM STORE.
+    </p>
+  </div>
 
-</div>
+  <div class="contact">
+    <h2>📞 HUBUNGI ADMIN</h2>
+    <p style="margin-bottom:18px;color:#ccc">
+      Butuh bantuan? Hubungi admin kami.
+    </p>
+    <a href="https://wa.me/6285603498372">
+      Chat WhatsApp Admin
+    </a>
+  </div>
 
-<div class="admin">
-  <h2>💬 HUBUNGI ADMIN</h2>
-  <p>Butuh bantuan atau ingin memesan produk?</p>
-  <a href="https://wa.me/6285603498372">WhatsApp Admin</a>
 </div>
 
 <footer>
   © 2026 PIEMM STORE. All Rights Reserved.
+  <br><br>
+  ⚡ Cepat • Aman • Murah
 </footer>
 
+<script>
+function order(product, price) {
+  const phone = "6285603498372";
+  const message =
+    "Halo Admin PIEMM STORE, saya ingin memesan:\n\n" +
+    "Produk: " + product + "\n" +
+    "Harga mulai: " + price + "\n\n" +
+    "Mohon informasi cara pemesanan. Terima kasih.";
+
+  window.open(
+    "https://wa.me/" + phone + "?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+}
+</script>
+
 </body>
-    </html>
-                       
+                            </html>
+                              
