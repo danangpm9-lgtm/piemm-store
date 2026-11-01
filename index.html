@@ -2,678 +2,581 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PIEMM STORE - Toko Digital</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIEMM STORE - Digital Store</title>
+  <meta name="description" content="PIEMM STORE - Toko produk dan layanan digital terpercaya.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+    :root {
+      --bg: #080611;
+      --panel: #151024;
+      --purple: #8b35ff;
+      --pink: #d34cff;
+      --white: #ffffff;
+      --muted: #aaa1bd;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #080d20;
-  color: white;
-}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* BACKGROUND */
-.background {
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 10% 10%, #243c78 0, transparent 35%),
-    radial-gradient(circle at 90% 40%, #48246e 0, transparent 35%),
-    linear-gradient(135deg,#080d20,#111a36,#090d20);
-  padding-bottom: 40px;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: white;
+      overflow-x: hidden;
+    }
 
-/* HEADER */
-header {
-  padding: 20px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ffffff20;
-}
+    a { color: inherit; text-decoration: none; }
 
-.logo {
-  font-size: 24px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  color: #7db8ff;
-}
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
 
-.logo span {
-  color: white;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8,6,17,.94);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid #33204e;
+    }
 
-.cart-button {
-  background: #2379ed;
-  border: none;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-}
+    .navbar {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
 
-/* HERO */
-.hero {
-  margin: 35px auto;
-  width: 88%;
-  min-height: 250px;
-  border-radius: 22px;
-  padding: 40px;
-  background:
-    linear-gradient(100deg,rgba(5,12,35,.95),rgba(22,75,155,.7)),
-    url("https://images.unsplash.com/photo-1557683316-973673baf926?w=1200");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  border: 1px solid #ffffff20;
-  box-shadow: 0 15px 40px #0006;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
 
-.hero-content {
-  max-width: 550px;
-}
+    .logo {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: linear-gradient(135deg,#a43bff,#5415bb);
+      box-shadow: 0 0 20px #8b35ff88;
+      font-size: 23px;
+    }
 
-.hero h1 {
-  font-size: 38px;
-  margin-bottom: 15px;
-}
+    nav { display: flex; gap: 22px; font-size: 13px; color: #ddd4ed; }
+    nav a:hover { color: #d58aff; }
 
-.hero h1 span {
-  color: #59a8ff;
-}
+    .admin-btn {
+      background: linear-gradient(110deg,#8b35ff,#c13fff);
+      padding: 10px 17px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 0 18px #8b35ff55;
+    }
 
-.hero p {
-  color: #d1d9ec;
-  line-height: 1.7;
-  margin-bottom: 22px;
-}
+    .hero {
+      margin: 34px auto;
+      min-height: 340px;
+      padding: 42px;
+      border: 1px solid #6b31a5;
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg,rgba(12,7,25,.98),rgba(34,11,65,.86),rgba(13,8,29,.55)),
+        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1400&q=85') center/cover;
+      box-shadow: 0 0 35px #8b35ff22;
+    }
 
-.hero a {
-  display: inline-block;
-  background: #267df0;
-  padding: 13px 22px;
-  color: white;
-  text-decoration: none;
-  border-radius: 9px;
-  font-weight: bold;
-}
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      right: 7%;
+      top: 15%;
+      background: #a638ff33;
+      filter: blur(70px);
+    }
 
-/* INFORMASI */
-.info {
-  width: 88%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 15px;
-}
+    .hero-content { position: relative; z-index: 1; max-width: 580px; }
 
-.info-card {
-  background: #ffffff0d;
-  border: 1px solid #ffffff18;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-}
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 13px;
+      border: 1px solid #b75aff;
+      border-radius: 30px;
+      color: #e1b7ff;
+      font-size: 11px;
+      margin-bottom: 18px;
+      background: #8b35ff22;
+    }
 
-.info-card h3 {
-  color: #6eb1ff;
-  margin-bottom: 8px;
-}
+    .hero h1 {
+      font-size: clamp(32px,5vw,54px);
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
 
-.info-card p {
-  font-size: 13px;
-  color: #c5cde0;
-}
+    .hero h1 span {
+      color: #c77aff;
+      text-shadow: 0 0 20px #a638ff88;
+    }
 
-/* PRODUK */
-.products-section {
-  width: 88%;
-  margin: 45px auto;
-}
+    .hero p { color: #d2c8e3; font-size: 14px; line-height: 1.8; }
 
-.section-title {
-  margin-bottom: 20px;
-}
+    .hero-actions { display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap; }
 
-.section-title h2 {
-  font-size: 27px;
-  margin-bottom: 8px;
-}
+    .primary, .secondary {
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-block;
+    }
 
-.section-title p {
-  color: #aebbd5;
-  font-size: 14px;
-}
+    .primary { background: linear-gradient(110deg,#8b35ff,#d044ff); }
+    .secondary { border: 1px solid #a45ce5; background: #160d28; }
 
-.search {
-  width: 100%;
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #ffffff30;
-  background: #ffffff0d;
-  color: white;
-  outline: none;
-  margin-bottom: 20px;
-}
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+      margin: 25px 0 38px;
+    }
 
-.search::placeholder {
-  color: #aab5ca;
-}
+    .feature {
+      background: var(--panel);
+      border: 1px solid #302044;
+      border-radius: 15px;
+      padding: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
 
-.categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 25px;
-}
+    .feature-icon {
+      width: 43px;
+      height: 43px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #7429bd33;
+      font-size: 21px;
+    }
 
-.categories button {
-  padding: 10px 17px;
-  border: 1px solid #ffffff25;
-  background: #ffffff0d;
-  color: white;
-  border-radius: 30px;
-  cursor: pointer;
-}
+    .feature strong { display: block; font-size: 12px; }
+    .feature small { color: var(--muted); font-size: 10px; }
 
-.categories button.active,
-.categories button:hover {
-  background: #2379ed;
-  border-color: #2379ed;
-}
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 15px;
+      margin: 38px 0 20px;
+    }
 
-/* GRID PRODUK */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
-}
+    .section-title h2 { font-size: 23px; }
+    .section-title p { color: var(--muted); font-size: 11px; margin-top: 4px; }
 
-.product {
-  background: #ffffff0d;
-  border: 1px solid #ffffff20;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: .3s;
-}
+    .search {
+      width: 100%;
+      padding: 15px 18px;
+      color: white;
+      background: #171025;
+      border: 1px solid #42265e;
+      border-radius: 12px;
+      outline: none;
+      font-family: inherit;
+      margin-bottom: 24px;
+    }
 
-.product:hover {
-  transform: translateY(-6px);
-  border-color: #418eff;
-}
+    .search:focus { border-color: #b04cff; box-shadow: 0 0 15px #8b35ff33; }
 
-.product img {
-  width: 100%;
-  height: 175px;
-  object-fit: cover;
-  background: #172443;
-}
+    .category-title {
+      font-size: 17px;
+      margin: 30px 0 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-.product-content {
-  padding: 18px;
-}
+    .category-title::before {
+      content: "";
+      width: 5px;
+      height: 23px;
+      border-radius: 5px;
+      background: #b54cff;
+      box-shadow: 0 0 12px #b54cff;
+    }
 
-.product-content small {
-  color: #70adff;
-}
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 17px;
+    }
 
-.product-content h3 {
-  margin: 9px 0;
-  font-size: 19px;
-}
+    .product {
+      overflow: hidden;
+      border-radius: 16px;
+      background: linear-gradient(160deg,#1c1430,#100c1b);
+      border: 1px solid #342148;
+      transition: .25s;
+    }
 
-.product-content p {
-  color: #b7c2d9;
-  font-size: 13px;
-  line-height: 1.6;
-  min-height: 40px;
-}
+    .product:hover {
+      transform: translateY(-5px);
+      border-color: #a64cff;
+      box-shadow: 0 8px 25px #8b35ff22;
+    }
 
-.price {
-  color: #69b0ff;
-  font-size: 22px;
-  font-weight: bold;
-  margin: 15px 0;
-}
+    .product img {
+      width: 100%;
+      height: 145px;
+      object-fit: cover;
+      display: block;
+      background: #211333;
+    }
 
-.add-button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  background: #2379ed;
-  color: white;
-  border-radius: 9px;
-  cursor: pointer;
-  font-weight: bold;
-}
+    .product-info { padding: 15px; }
+    .product-info h3 { font-size: 13px; margin-bottom: 7px; }
+    .product-info p { font-size: 10px; color: var(--muted); min-height: 32px; line-height: 1.6; }
+    .price { color: #d28aff; font-size: 15px; font-weight: 800; margin: 12px 0; }
 
-.add-button:hover {
-  background: #125ec5;
-}
+    .buy {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      border-radius: 9px;
+      background: linear-gradient(110deg,#7926d9,#bb3cff);
+      font-size: 11px;
+      font-weight: 700;
+    }
 
-/* KERANJANG */
-.cart-section {
-  width: 88%;
-  margin: 40px auto;
-  padding: 25px;
-  background: #ffffff0d;
-  border: 1px solid #ffffff20;
-  border-radius: 17px;
-}
+    .buy:hover { filter: brightness(1.2); }
 
-.cart-section h2 {
-  margin-bottom: 20px;
-}
+    .about {
+      background: linear-gradient(120deg,#21113b,#120d20);
+      border: 1px solid #42265e;
+      border-radius: 20px;
+      padding: 28px;
+      margin: 45px 0;
+    }
 
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  border-bottom: 1px solid #ffffff20;
-  padding: 14px 0;
-}
+    .about h2 { font-size: 21px; margin-bottom: 10px; }
+    .about p { color: #c5bad7; font-size: 12px; line-height: 1.9; }
 
-.cart-item button {
-  background: #dc3545;
-  border: none;
-  color: white;
-  padding: 7px 12px;
-  border-radius: 7px;
-  cursor: pointer;
-}
+    .contact {
+      text-align: center;
+      padding: 35px 20px;
+      border-radius: 20px;
+      background: #171025;
+      border: 1px solid #42265e;
+      margin-bottom: 45px;
+    }
 
-.total {
-  font-size: 21px;
-  font-weight: bold;
-  color: #70b5ff;
-  margin: 20px 0;
-}
+    .contact h2 { font-size: 23px; margin-bottom: 10px; }
+    .contact p { color: var(--muted); font-size: 12px; margin-bottom: 20px; }
 
-.checkout {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 10px;
-  background: #16a765;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
+    footer {
+      border-top: 1px solid #302044;
+      padding: 25px 0;
+      text-align: center;
+      color: #8e849f;
+      font-size: 10px;
+    }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px 15px;
-  border-top: 1px solid #ffffff20;
-  color: #aab7d0;
-  font-size: 13px;
-}
+    .wa-float {
+      position: fixed;
+      z-index: 20;
+      bottom: 20px;
+      right: 20px;
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #20c66a;
+      color: white;
+      font-size: 26px;
+      box-shadow: 0 0 20px #20c66a77;
+    }
 
-footer strong {
-  color: #70b5ff;
-}
+    .empty { display: none; color: #bdb1cf; font-size: 13px; padding: 15px 0; }
 
-@media(max-width:750px) {
-  header {
-    padding: 18px 5%;
-  }
+    @media(max-width:800px) {
+      nav { display: none; }
+      .hero { padding: 28px 22px; min-height: 330px; }
+      .features { grid-template-columns: 1fr; }
+      .products { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+      .product img { height: 125px; }
+      .section-title h2 { font-size: 19px; }
+    }
 
-  .hero {
-    padding: 25px;
-    width: 92%;
-  }
-
-  .hero h1 {
-    font-size: 29px;
-  }
-
-  .info {
-    width: 92%;
-    grid-template-columns: 1fr;
-  }
-
-  .products-section,
-  .cart-section {
-    width: 92%;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2,1fr);
-    gap: 12px;
-  }
-
-  .product img {
-    height: 125px;
-  }
-
-  .product-content {
-    padding: 12px;
-  }
-
-  .product-content h3 {
-    font-size: 16px;
-  }
-
-  .price {
-    font-size: 18px;
-  }
-}
-
-@media(max-width:400px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: 25px;
-  }
-}
-</style>
+    @media(max-width:380px) {
+      .brand { font-size: 16px; }
+      .admin-btn { padding: 9px 11px; }
+      .product-info { padding: 11px; }
+    }
+  </style>
 </head>
 
 <body>
-<div class="background">
 
 <header>
-  <div class="logo">PIEMM <span>STORE.</span></div>
-  <button class="cart-button" onclick="goCart()">
-    🛒 Keranjang (<span id="cartCount">0</span>)
-  </button>
+  <div class="container navbar">
+    <a class="brand" href="#">
+      <span class="logo">♛</span>
+      <span>PIEMM <span style="color:#c77aff">STORE</span></span>
+    </a>
+    <nav>
+      <a href="#">Beranda</a>
+      <a href="#produk">Produk</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <a class="admin-btn" href="https://wa.me/6285603498372">Hubungi Admin</a>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>WELCOME TO <span>PIEMM STORE</span></h1>
-    <p>
-      Tempat belanja produk digital terpercaya.
-      Harga terjangkau, pelayanan cepat dan
-      proses pemesanan mudah.
-    </p>
-    <a href="#produk">BELANJA SEKARANG</a>
-  </div>
-</section>
+<main class="container">
 
-<section class="info">
-  <div class="info-card">
-    <h3>⚡ Cepat</h3>
-    <p>Proses pesanan secepat mungkin.</p>
-  </div>
-  <div class="info-card">
-    <h3>💎 Terjangkau</h3>
-    <p>Harga ramah di kantong.</p>
-  </div>
-  <div class="info-card">
-    <h3>🛡️ Pelayanan</h3>
-    <p>Admin siap membantu pesanan.</p>
-  </div>
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">✦ DIGITAL STORE TERPERCAYA</span>
+      <h1>SELAMAT DATANG DI <span>PIEMM STORE</span></h1>
+      <p>Temukan berbagai produk digital dan layanan terbaik dengan proses pemesanan mudah, cepat, dan praktis.</p>
+      <div class="hero-actions">
+        <a href="#produk" class="primary">Lihat Produk →</a>
+        <a href="https://wa.me/6285603498372" class="secondary">Chat Admin</a>
+      </div>
+    </div>
+  </section>
 
-<section class="products-section" id="produk">
-  <div class="section-title">
-    <h2>🔥 PRODUK KAMI</h2>
-    <p>Pilih produk digital yang kamu inginkan.</p>
-  </div>
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <div><strong>Proses Praktis</strong><small>Pemesanan mudah dan cepat</small></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🛡️</div>
+      <div><strong>Pelayanan Admin</strong><small>Dibantu langsung oleh admin</small></div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">💜</div>
+      <div><strong>Banyak Pilihan</strong><small>Berbagai layanan digital</small></div>
+    </div>
+  </section>
 
-  <input
-    class="search"
-    type="text"
-    id="search"
-    placeholder="Cari produk..."
-    oninput="renderProducts()"
-  >
+  <section id="produk">
+    <div class="section-title">
+      <div>
+        <h2>Produk & Layanan</h2>
+        <p>Pilih produk yang kamu butuhkan</p>
+      </div>
+    </div>
 
-  <div class="categories">
-    <button class="active" onclick="filterCategory('Semua',this)">Semua</button>
-    <button onclick="filterCategory('Akun',this)">Akun</button>
-    <button onclick="filterCategory('Sosmed',this)">Sosmed</button>
-    <button onclick="filterCategory('Jasa',this)">Jasa</button>
-  </div>
+    <input class="search" id="search" type="search" placeholder="🔍 Cari produk yang kamu inginkan...">
 
-  <div class="product-grid" id="productGrid"></div>
-</section>
+    <h3 class="category-title">NOKOS</h3>
+    <div class="products">
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=700&q=85" alt="Produk NOKOS">
+        <div class="product-info">
+          <h3>NOKOS</h3>
+          <p>Layanan nomor kosong. Hubungi admin untuk informasi ketersediaan.</p>
+          <div class="price">Rp3.000</div>
+          <a class="buy" href="#" onclick="order('NOKOS','Rp3.000');return false;">Pesan Sekarang</a>
+        </div>
+      </article>
+    </div>
 
-<section class="cart-section" id="keranjang">
-  <h2>🛒 KERANJANG BELANJA</h2>
-  <div id="cartItems">
-    <p style="color:#aebbd5">Keranjang masih kosong.</p>
-  </div>
-  <div class="total">
-    Total: <span id="total">Rp0</span>
-  </div>
-  <button class="checkout" onclick="checkout()">
-    PESAN SEKARANG VIA WHATSAPP
-  </button>
-</section>
+    <h3 class="category-title">SUNTIK SOSMED</h3>
+    <div class="products">
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=700&q=85" alt="TikTok">
+        <div class="product-info">
+          <h3>Like TikTok</h3>
+          <p>Layanan penambahan like TikTok.</p>
+          <div class="price">Hubungi Admin</div>
+          <a class="buy" href="#" onclick="order('Like TikTok','Hubungi Admin');return false;">Pesan Sekarang</a>
+        </div>
+      </article>
+
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=700&q=85" alt="Followers TikTok">
+        <div class="product-info">
+          <h3>Followers TikTok</h3>
+          <p>Layanan penambahan followers TikTok.</p>
+          <div class="price">Hubungi Admin</div>
+          <a class="buy" href="#" onclick="order('Followers TikTok','Hubungi Admin');return false;">Pesan Sekarang</a>
+        </div>
+      </article>
+
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?auto=format&fit=crop&w=700&q=85" alt="Instagram">
+        <div class="product-info">
+          <h3>Like Instagram</h3>
+          <p>Layanan penambahan like Instagram.</p>
+          <div class="price">Hubungi Admin</div>
+          <a class="buy" href="#" onclick="order('Like Instagram','Hubungi Admin');return false;">Pesan Sekarang</a>
+        </div>
+      </article>
+
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85" alt="Followers Instagram">
+        <div class="product-info">
+          <h3>Followers Instagram</h3>
+          <p>Layanan penambahan followers Instagram.</p>
+          <div class="price">Hubungi Admin</div>
+          <a class="buy" href="#" onclick="order('Followers Instagram','Hubungi Admin');return false;">Pesan Sekarang</a>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="category-title">SUNTIK SALURAN WA</h3>
+    <div class="products">
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=700&q=85" alt="WhatsApp">
+        <div class="product-info">
+          <h3>Suntik Saluran WA</h3>
+          <p>Layanan suntik saluran WhatsApp.</p>
+          <div class="price">Rp1.000</div>
+          <a class="buy" href="#" onclick="order('Suntik Saluran WA','Rp1.000');return false;">Pesan Sekarang</a>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="category-title">JASA DESAIN</h3>
+    <div class="products">
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=700&q=85" alt="Desain grafis">
+        <div class="product-info">
+          <h3>Desain Logo</h3>
+          <p>Jasa pembuatan desain logo sesuai permintaan.</p>
+          <div class="price">Hubungi Admin</div>
+          <a class="buy" href="#" onclick="order('Jasa Desain Logo','Hubungi Admin');return false;">Pesan Sekarang</a>
+        </div>
+      </article>
+
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=700&q=85" alt="Desain poster">
+        <div class="product-info">
+          <h3>Desain Poster & Banner</h3>
+          <p>Desain poster dan banner sesuai kebutuhan.</p>
+          <div class="price">Hubungi Admin</div>
+          <a class="buy" href="#" onclick="order('Desain Poster dan Banner','Hubungi Admin');return false;">Pesan Sekarang</a>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="category-title">JASA DIGITAL</h3>
+    <div class="products">
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=85" alt="Produk digital">
+        <div class="product-info">
+          <h3>Produk Digital</h3>
+          <p>Berbagai pilihan produk digital. Tanyakan kepada admin.</p>
+          <div class="price">Hubungi Admin</div>
+          <a class="buy" href="#" onclick="order('Produk Digital','Hubungi Admin');return false;">Pesan Sekarang</a>
+        </div>
+      </article>
+
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&q=85" alt="Jasa digital">
+        <div class="product-info">
+          <h3>Jasa Digital Lainnya</h3>
+          <p>Konsultasikan kebutuhan layanan digital kamu.</p>
+          <div class="price">Hubungi Admin</div>
+          <a class="buy" href="#" onclick="order('Jasa Digital Lainnya','Hubungi Admin');return false;">Pesan Sekarang</a>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="category-title">LAINNYA</h3>
+    <div class="products">
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=700&q=85" alt="Layanan lainnya">
+        <div class="product-info">
+          <h3>Layanan Lainnya</h3>
+          <p>Belum menemukan yang kamu cari? Tanya admin.</p>
+          <div class="price">Hubungi Admin</div>
+          <a class="buy" href="#" onclick="order('Layanan Lainnya','Hubungi Admin');return false;">Pesan Sekarang</a>
+        </div>
+      </article>
+    </div>
+    <p class="empty" id="empty">Produk tidak ditemukan.</p>
+  </section>
+
+  <section class="about" id="tentang">
+    <h2>Tentang PIEMM STORE</h2>
+    <p>PIEMM STORE menyediakan berbagai produk dan layanan digital untuk membantu kebutuhan online kamu. Kami berusaha memberikan pelayanan yang mudah, praktis, dan responsif. Untuk informasi harga, stok, dan proses pemesanan, silakan hubungi admin.</p>
+  </section>
+
+  <section class="contact" id="kontak">
+    <h2>Butuh Bantuan?</h2>
+    <p>Hubungi admin PIEMM STORE untuk pemesanan dan informasi produk.</p>
+    <a class="primary" href="https://wa.me/6285603498372">Chat Admin WhatsApp</a>
+  </section>
+
+</main>
 
 <footer>
-  <strong>PIEMM STORE</strong>
-  <p style="margin-top:10px">
-    Toko Produk Digital | Belanja Mudah dan Praktis
-  </p>
-  <p style="margin-top:10px">
-    © 2026 PIEMM STORE. All Rights Reserved.
-  </p>
+  © 2026 PIEMM STORE. All Rights Reserved.
 </footer>
 
-</div>
+<a class="wa-float" href="https://wa.me/6285603498372" aria-label="WhatsApp Admin">☏</a>
 
 <script>
-const products = [
-  {
-    id:1,
-    name:"NOKOS",
-    category:"Akun",
-    price:5000,
-    description:"Nomor kosong untuk kebutuhan digital.",
-    image:"https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=600"
-  },
-  {
-    id:2,
-    name:"Jasa Suntik Like TikTok",
-    category:"Sosmed",
-    price:5000,
-    description:"Layanan penambahan like TikTok.",
-    image:"https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600"
-  },
-  {
-    id:3,
-    name:"Jasa Suntik Followers",
-    category:"Sosmed",
-    price:5000,
-    description:"Layanan followers media sosial.",
-    image:"https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=600"
-  },
-  {
-    id:4,
-    name:"Jasa Like Instagram",
-    category:"Sosmed",
-    price:5000,
-    description:"Layanan penambahan like Instagram.",
-    image:"https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600"
-  },
-  {
-    id:5,
-    name:"Jasa Follow Instagram",
-    category:"Sosmed",
-    price:5000,
-    description:"Layanan followers Instagram.",
-    image:"https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600"
-  },
-  {
-    id:6,
-    name:"Jasa Digital",
-    category:"Jasa",
-    price:5000,
-    description:"Jasa bantuan kebutuhan digital.",
-    image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600"
+  const admin = "6285603498372";
+
+  function order(product, price) {
+    const message =
+      "Halo Admin PIEMM STORE, saya ingin memesan:\n\n" +
+      "Produk: " + product + "\n" +
+      "Harga: " + price + "\n\n" +
+      "Mohon informasi selanjutnya. Terima kasih.";
+    window.open("https://wa.me/" + admin + "?text=" + encodeURIComponent(message), "_blank");
   }
-];
 
-let cart = [];
-let currentCategory = "Semua";
+  const search = document.getElementById("search");
+  const products = document.querySelectorAll(".product");
+  const categories = document.querySelectorAll(".category-title");
+  const empty = document.getElementById("empty");
 
-function rupiah(number) {
-  return "Rp" + number.toLocaleString("id-ID");
-}
+  search.addEventListener("input", function() {
+    const keyword = this.value.toLowerCase();
+    let found = 0;
 
-function renderProducts() {
-  const grid = document.getElementById("productGrid");
-  const keyword = document.getElementById("search").value.toLowerCase();
+    products.forEach(function(product) {
+      const match = product.innerText.toLowerCase().includes(keyword);
+      product.style.display = match ? "" : "none";
+      if (match) found++;
+    });
 
-  const filtered = products.filter(product => {
-    const categoryMatch =
-      currentCategory === "Semua" ||
-      product.category === currentCategory;
+    categories.forEach(function(category) {
+      const section = category.nextElementSibling;
+      const visible = section && Array.from(section.querySelectorAll(".product"))
+        .some(product => product.style.display !== "none");
+      category.style.display = visible ? "" : "none";
+    });
 
-    const searchMatch =
-      product.name.toLowerCase().includes(keyword);
-
-    return categoryMatch && searchMatch;
+    empty.style.display = found === 0 ? "block" : "none";
   });
-
-  grid.innerHTML = "";
-
-  if (filtered.length === 0) {
-    grid.innerHTML = "<p>Produk tidak ditemukan.</p>";
-    return;
-  }
-
-  filtered.forEach(product => {
-    grid.innerHTML += `
-      <div class="product">
-        <img
-          src="${product.image}"
-          alt="${product.name}"
-          loading="lazy"
-          onerror="this.src='https://placehold.co/600x400/172443/ffffff?text=PIEMM+STORE'"
-        >
-        <div class="product-content">
-          <small>${product.category}</small>
-          <h3>${product.name}</h3>
-          <p>${product.description}</p>
-          <div class="price">${rupiah(product.price)}</div>
-          <button class="add-button"
-            onclick="addCart(${product.id})">
-            + Tambahkan
-          </button>
-        </div>
-      </div>
-    `;
-  });
-}
-
-function filterCategory(category, button) {
-  currentCategory = category;
-
-  document.querySelectorAll(".categories button")
-    .forEach(btn => btn.classList.remove("active"));
-
-  button.classList.add("active");
-  renderProducts();
-}
-
-function addCart(id) {
-  const product = products.find(p => p.id === id);
-  const existing = cart.find(item => item.id === id);
-
-  if (existing) {
-    existing.qty++;
-  } else {
-    cart.push({...product, qty:1});
-  }
-
-  renderCart();
-}
-
-function removeCart(id) {
-  cart = cart.filter(item => item.id !== id);
-  renderCart();
-}
-
-function renderCart() {
-  const container = document.getElementById("cartItems");
-  const count = document.getElementById("cartCount");
-
-  let total = 0;
-  let quantity = 0;
-
-  if (cart.length === 0) {
-    container.innerHTML =
-      '<p style="color:#aebbd5">Keranjang masih kosong.</p>';
-  } else {
-    container.innerHTML = cart.map(item => {
-      total += item.price * item.qty;
-      quantity += item.qty;
-
-      return `
-        <div class="cart-item">
-          <div>
-            <strong>${item.name}</strong>
-            <p style="color:#aebbd5;font-size:13px">
-              ${item.qty} x ${rupiah(item.price)}
-            </p>
-          </div>
-          <button onclick="removeCart(${item.id})">
-            Hapus
-          </button>
-        </div>
-      `;
-    }).join("");
-  }
-
-  if (cart.length === 0) {
-    quantity = 0;
-  }
-
-  document.getElementById("total").textContent = rupiah(total);
-  count.textContent = quantity;
-}
-
-function goCart() {
-  document.getElementById("keranjang")
-    .scrollIntoView({behavior:"smooth"});
-}
-
-function checkout() {
-  if (cart.length === 0) {
-    alert("Keranjang masih kosong!");
-    return;
-  }
-
-  let message = "Halo Admin PIEMM STORE, saya ingin memesan:%0A%0A";
-  let total = 0;
-
-  cart.forEach(item => {
-    message += "- " + item.name +
-      " x" + item.qty +
-      " = " + rupiah(item.price * item.qty) + "%0A";
-
-    total += item.price * item.qty;
-  });
-
-  message += "%0ATotal: " + rupiah(total);
-  message += "%0A%0AMohon informasi pemesanannya.";
-
-  const phone = "6285603498372";
-
-  window.open(
-    "https://wa.me/" + phone + "?text=" + message,
-    "_blank"
-  );
-}
-
-renderProducts();
-renderCart();
 </script>
 
 </body>
