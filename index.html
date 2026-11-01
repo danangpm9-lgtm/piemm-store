@@ -6,69 +6,151 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PIEMM STORE</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#090611;color:white;font-family:Arial,sans-serif}
-header{padding:22px;background:#160d27;text-align:center;border-bottom:2px solid #9b4dff}
-header h1{color:#b66aff;font-size:28px}
-header p{color:#ccc;margin-top:7px}
-.hero{text-align:center;padding:35px 18px}
-.hero h2{font-size:27px;color:#c58aff}
-.hero p{color:#ccc;margin-top:12px;line-height:1.6}
-.container{padding:15px;max-width:650px;margin:auto}
-.title{color:#c58aff;margin:20px 0 15px}
-.product{background:#1b1230;border:1px solid #7135a8;border-radius:14px;padding:18px;margin-bottom:15px}
-.product h3{color:#d4a5ff;margin-bottom:8px}
-.product p{color:#ccc;font-size:14px;line-height:1.5}
-.btn{display:block;text-align:center;background:#922fff;color:white;text-decoration:none;padding:12px;border-radius:9px;margin-top:14px;font-weight:bold}
-.btn:hover{background:#7020c5}
-footer{text-align:center;padding:25px;color:#aaa;font-size:13px}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#090711;
+ color:white;
+ font-family:Arial,sans-serif;
+}
+header{
+ background:linear-gradient(120deg,#270044,#7900b8);
+ padding:25px 18px;
+ text-align:center;
+}
+header h1{margin:0;font-size:30px;letter-spacing:2px}
+header p{color:#e5c6ff}
+.container{padding:20px;max-width:850px;margin:auto}
+.hero{
+ background:linear-gradient(135deg,#26003f,#7800b8);
+ padding:25px;border-radius:18px;
+ text-align:center;margin-bottom:25px;
+}
+.hero h2{font-size:25px}
+.hero p{color:#eee}
+.section-title{
+ color:#d69aff;
+ border-left:4px solid #b000ff;
+ padding-left:12px;margin:28px 0 15px;
+}
+.products{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:15px;
+}
+.card{
+ background:#171020;
+ border:1px solid #542078;
+ border-radius:15px;
+ overflow:hidden;
+}
+.card img{
+ width:100%;height:130px;
+ object-fit:cover;
+ display:block;
+}
+.card-content{padding:13px}
+.card h3{margin:5px 0;color:#dc9cff}
+.card p{font-size:13px;color:#ccc}
+.price{color:#fff;font-weight:bold}
+.btn{
+ display:block;text-align:center;
+ background:linear-gradient(90deg,#7900b8,#c000ff);
+ color:white;text-decoration:none;
+ padding:11px;border-radius:9px;
+ font-weight:bold;margin-top:12px;
+}
+footer{
+ text-align:center;padding:25px;
+ color:#aaa;font-size:13px;
+}
+@media(min-width:600px){
+ .products{grid-template-columns:repeat(3,1fr)}
+}
 </style>
 </head>
 <body>
 
 <header>
 <h1>💜 PIEMM STORE</h1>
-<p>Solusi Kebutuhan Digital Anda</p>
+<p>Solusi Kebutuhan Digital Kamu!</p>
 </header>
 
-<section class="hero">
-<h2>WELCOME TO PIEMM STORE</h2>
-<p>Selamat datang di toko digital kami!<br>
-Menyediakan berbagai layanan digital dengan harga terjangkau dan pelayanan terbaik.</p>
-</section>
-
 <div class="container">
-<h2 class="title">🔥 PRODUK KAMI</h2>
 
-<div class="product">
-<h3>📱 NOKOS</h3>
-<p>Tersedia berbagai pilihan nomor kosong untuk kebutuhan digital Anda.</p>
-<a class="btn" href="https://wa.me/6285603498372?text=Halo%20PIEMM%20STORE%2C%20saya%20ingin%20pesan%20NOKOS">PESAN SEKARANG</a>
+<div class="hero">
+<h2>WELCOME TO PIEMM STORE</h2>
+<p>Murah • Aman • Terpercaya</p>
+<p>Temukan berbagai layanan digital favoritmu di sini.</p>
+<a class="btn" href="https://wa.me/6285603498372">
+HUBUNGI ADMIN
+</a>
 </div>
 
-<div class="product">
-<h3>💉 SUNTIK SOSMED</h3>
-<p>Layanan tambah followers, likes, dan kebutuhan media sosial.</p>
-<a class="btn" href="https://wa.me/6285603498372?text=Halo%20PIEMM%20STORE%2C%20saya%20ingin%20pesan%20SUNTIK%20SOSMED">PESAN SEKARANG</a>
+<h2 class="section-title">🔥 PRODUK & LAYANAN</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600" alt="Sosial media">
+<div class="card-content">
+<h3>Suntik Sosmed</h3>
+<p>Tambah followers, like dan interaksi media sosial.</p>
+<a class="btn" href="https://wa.me/6285603498372?text=Halo%20Admin%2C%20saya%20ingin%20pesan%20Suntik%20Sosmed">Pesan Sekarang</a>
+</div>
 </div>
 
-<div class="product">
-<h3>🎮 JASA JOKI</h3>
-<p>Layanan jasa joki dengan proses pengerjaan manual.</p>
-<a class="btn" href="https://wa.me/6285603498372?text=Halo%20PIEMM%20STORE%2C%20saya%20ingin%20pesan%20JASA%20JOKI">PESAN SEKARANG</a>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=600" alt="WhatsApp">
+<div class="card-content">
+<h3>Suntik Saluran WA</h3>
+<p>Layanan penambahan pengikut saluran WhatsApp.</p>
+<a class="btn" href="https://wa.me/6285603498372?text=Halo%20Admin%2C%20saya%20ingin%20pesan%20Suntik%20Saluran">Pesan Sekarang</a>
+</div>
 </div>
 
-<div class="product">
-<h3>🛒 PRODUK DIGITAL</h3>
-<p>Berbagai kebutuhan produk digital tersedia di PIEMM STORE.</p>
-<a class="btn" href="https://wa.me/6285603498372?text=Halo%20PIEMM%20STORE%2C%20saya%20ingin%20bertanya%20tentang%20produk%20digital">TANYA ADMIN</a>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600" alt="Produk digital">
+<div class="card-content">
+<h3>Produk Digital</h3>
+<p>Berbagai kebutuhan produk digital tersedia di sini.</p>
+<a class="btn" href="https://wa.me/6285603498372?text=Halo%20Admin%2C%20saya%20ingin%20bertanya%20produk%20digital">Pesan Sekarang</a>
+</div>
 </div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=600" alt="Desain grafis">
+<div class="card-content">
+<h3>Jasa Desain</h3>
+<p>Layanan desain sesuai kebutuhan kamu.</p>
+<a class="btn" href="https://wa.me/6285603498372?text=Halo%20Admin%2C%20saya%20ingin%20pesan%20Jasa%20Desain">Pesan Sekarang</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600" alt="Jasa digital">
+<div class="card-content">
+<h3>Jasa Digital</h3>
+<p>Butuh bantuan layanan digital? Hubungi admin.</p>
+<a class="btn" href="https://wa.me/6285603498372?text=Halo%20Admin%2C%20saya%20ingin%20bertanya%20jasa%20digital">Pesan Sekarang</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600" alt="Layanan lainnya">
+<div class="card-content">
+<h3>Layanan Lainnya</h3>
+<p>Tanyakan layanan lainnya langsung kepada admin.</p>
+<a class="btn" href="https://wa.me/6285603498372">Pesan Sekarang</a>
+</div>
+</div>
+
+</div>
 </div>
 
 <footer>
-© 2026 PIEMM STORE<br>
-Terima kasih telah berbelanja 💜
+💜 PIEMM STORE<br>
+Terima kasih sudah berbelanja!
 </footer>
 
 </body>
