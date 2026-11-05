@@ -4,321 +4,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PIEMM STORE | Digital Store</title>
+<title>Disclaimer - PM Store</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--purple:#9b4dff;--dark:#090711;--card:#171322;--muted:#aaa1bb}
-body{
- background:#090711;color:white;
- font-family:Arial,sans-serif;
- min-height:100vh;
+* {
+  box-sizing: border-box;
 }
-header{
- display:flex;align-items:center;justify-content:space-between;
- padding:16px 6%;background:#100b1b;
- border-bottom:1px solid #392052;
- position:sticky;top:0;z-index:10;
+body {
+  margin: 0;
+  padding: 20px;
+  background: #090014;
+  color: white;
+  font-family: Arial, sans-serif;
 }
-.logo{display:flex;align-items:center;gap:10px}
-.logo-icon{
- width:43px;height:43px;border-radius:13px;
- background:linear-gradient(135deg,#b66aff,#6215bd);
- display:flex;align-items:center;justify-content:center;
- font-weight:900;font-size:19px;
- box-shadow:0 0 18px #9b4dff77;
+.container {
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 25px;
+  background: #17052b;
+  border: 1px solid #a020f0;
+  border-radius: 18px;
+  box-shadow: 0 0 20px #8a2be2;
 }
-.logo h2{font-size:19px}
-.logo span{color:#bd82ff}
-nav{display:flex;gap:8px}
-nav button{
- border:0;background:transparent;color:#c7bdd6;
- padding:10px 13px;border-radius:9px;
- cursor:pointer;font-weight:bold;
+h1 {
+  color: #c77dff;
+  text-align: center;
 }
-nav button.active,nav button:hover{
- background:#772bc2;color:white;
+h2 {
+  color: #d8a5ff;
 }
-main{max-width:1150px;margin:auto;padding:28px 6%}
-.page{display:none}
-.page.active{display:block}
-.hero{
- background:linear-gradient(120deg,#291044,#111020 70%);
- border:1px solid #6734a0;
- border-radius:22px;padding:38px 28px;
- overflow:hidden;position:relative;
+p {
+  line-height: 1.8;
+  color: #ddd;
 }
-.hero:after{
- content:"PM";position:absolute;right:25px;top:5px;
- font-size:145px;font-weight:900;
- color:#ffffff09;
+a {
+  color: #d28aff;
+  text-decoration: none;
 }
-.hero small{color:#c58bff;font-weight:bold;letter-spacing:2px}
-.hero h1{font-size:38px;margin:17px 0 12px}
-.hero h1 span{color:#bd82ff}
-.hero p{color:#d2c7df;line-height:1.7;max-width:520px}
-.btn{
- display:inline-block;margin-top:22px;
- padding:13px 21px;border-radius:10px;
- background:linear-gradient(120deg,#a64cff,#6c21bd);
- color:white;text-decoration:none;font-weight:bold;
- border:0;cursor:pointer;
+button {
+  background: #8a2be2;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }
-.section-title{margin:30px 0 18px}
-.section-title h2{font-size:23px}
-.section-title p{color:var(--muted);margin-top:7px}
-.stats{
- display:grid;grid-template-columns:repeat(3,1fr);
- gap:14px;margin-top:23px;
-}
-.stat{
- background:var(--card);border:1px solid #38234f;
- padding:20px;border-radius:14px;
-}
-.stat strong{font-size:22px;color:#c18aff}
-.stat p{font-size:13px;color:var(--muted);margin-top:7px}
-.products{
- display:grid;grid-template-columns:repeat(3,1fr);
- gap:17px;
-}
-.product{
- background:var(--card);border:1px solid #342442;
- border-radius:16px;overflow:hidden;
- transition:.25s;
-}
-.product:hover{
- transform:translateY(-5px);
- border-color:#a45aff;
- box-shadow:0 8px 25px #8c36ff22;
-}
-.product img{
- width:100%;height:145px;object-fit:cover;
- display:block;
-}
-.product-info{padding:16px}
-.product-info h3{font-size:17px}
-.product-info p{
- color:var(--muted);font-size:13px;
- line-height:1.5;margin:8px 0;
-}
-.price{color:#d3a4ff;font-size:19px;font-weight:bold}
-.product .btn{
- width:100%;text-align:center;
- padding:11px;margin-top:13px;
-}
-.panel{
- background:var(--card);border:1px solid #39234e;
- border-radius:16px;padding:22px;margin-top:18px;
-}
-.panel p{color:#c3b8d1;line-height:1.8;margin-top:9px}
-footer{
- text-align:center;padding:28px 15px;
- border-top:1px solid #30203d;
- color:#968aa5;font-size:13px;margin-top:45px;
-}
-footer b{color:#bd82ff}
-@media(max-width:700px){
- header{padding:12px 4%;flex-wrap:wrap;gap:12px}
- nav{width:100%;justify-content:space-between}
- nav button{padding:9px 10px;font-size:12px}
- main{padding:20px 4%}
- .hero{padding:28px 20px}
- .hero h1{font-size:30px}
- .hero:after{font-size:90px;top:20px}
- .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
- .product img{height:110px}
- .product-info{padding:12px}
- .product-info h3{font-size:14px}
- .product-info p{font-size:12px}
- .price{font-size:16px}
- .stats{gap:8px}
- .stat{padding:12px}
- .stat strong{font-size:17px}
- .stat p{font-size:11px}
-}
-@media(max-width:360px){
- .products{grid-template-columns:1fr}
+.footer {
+  text-align: center;
+  color: #999;
+  margin-top: 30px;
+  font-size: 12px;
 }
 </style>
 </head>
 <body>
 
-<header>
- <div class="logo">
-  <div class="logo-icon">PM</div>
-  <h2>PIEMM <span>STORE</span></h2>
- </div>
- <nav>
-  <button class="active" onclick="showPage('home',this)">Beranda</button>
-  <button onclick="showPage('produk',this)">Produk</button>
-  <button onclick="showPage('bantuan',this)">Bantuan</button>
- </nav>
-</header>
+<div class="container">
+  <h1>DISCLAIMER</h1>
+  <p>Selamat datang di PM Store.</p>
 
-<main>
-
-<!-- DASHBOARD 1 -->
-<section id="home" class="page active">
- <div class="hero">
-  <small>WELCOME TO PIEMM STORE</small>
-  <h1>Solusi Digital<br><span>Untuk Kamu!</span></h1>
+  <h2>1. Informasi Produk</h2>
   <p>
-   Selamat datang di PIEMM STORE.
-   Temukan berbagai produk digital dan layanan
-   sosial media dengan harga terjangkau.
+    Informasi produk ditampilkan sebagai referensi
+    bagi pengunjung. Detail produk, harga, dan
+    ketersediaan dapat berubah sewaktu-waktu.
   </p>
-  <button class="btn" onclick="showPage('produk')">
-   Lihat Produk →
-  </button>
- </div>
 
- <div class="stats">
-  <div class="stat">
-   <strong>7+</strong>
-   <p>Produk Digital</p>
+  <h2>2. Tautan Shopee</h2>
+  <p>
+    Beberapa tautan produk di website ini merupakan
+    tautan afiliasi Shopee. Kami dapat memperoleh
+    komisi apabila pengunjung melakukan pembelian
+    melalui tautan tersebut, tanpa biaya tambahan
+    bagi pembeli.
+  </p>
+
+  <h2>3. Transaksi</h2>
+  <p>
+    Seluruh transaksi pembelian dilakukan melalui
+    platform Shopee. PM Store tidak bertanggung
+    jawab atas proses pembayaran dan pengiriman
+    yang dikelola oleh Shopee atau penjual.
+  </p>
+
+  <h2>4. Persetujuan</h2>
+  <p>
+    Dengan menggunakan website ini, pengunjung
+    dianggap telah membaca dan memahami disclaimer
+    yang berlaku.
+  </p>
+
+  <div class="footer">
+    © 2026 PM Store. All Rights Reserved.
   </div>
-  <div class="stat">
-   <strong>24/7</strong>
-   <p>Layanan Pesanan</p>
-  </div>
-  <div class="stat">
-   <strong>Murah</strong>
-   <p>Harga Bersahabat</p>
-  </div>
- </div>
-
- <div class="section-title">
-  <h2>Kenapa PIEMM STORE?</h2>
-  <p>Belanja digital lebih mudah dan praktis.</p>
- </div>
-
- <div class="panel">
-  <h3>⚡ Harga Terjangkau</h3>
-  <p>Nikmati berbagai pilihan produk dengan harga ramah di kantong.</p>
- </div>
- <div class="panel">
-  <h3>💜 Pelayanan Mudah</h3>
-  <p>Pemesanan langsung melalui WhatsApp admin.</p>
- </div>
-</section>
-
-<!-- DASHBOARD 2 -->
-<section id="produk" class="page">
- <div class="section-title">
-  <h2>Katalog Produk</h2>
-  <p>Pilih produk yang ingin kamu pesan.</p>
- </div>
-
- <div class="products" id="productList"></div>
-</section>
-
-<!-- DASHBOARD 3 -->
-<section id="bantuan" class="page">
- <div class="hero">
-  <small>PIEMM STORE SUPPORT</small>
-  <h1>Butuh <span>Bantuan?</span></h1>
-  <p>Hubungi admin untuk bertanya tentang produk, harga, dan pemesanan.</p>
-  <a class="btn" href="https://wa.me/6285603498372">
-   Hubungi Admin →
-  </a>
- </div>
-
- <div class="section-title">
-  <h2>Informasi Toko</h2>
- </div>
- <div class="panel">
-  <h3>PIEMM STORE</h3>
-  <p>Tempat belanja produk digital dan layanan sosial media.</p>
-  <p>Jam pelayanan: Setiap hari.</p>
-  <p>WhatsApp Admin: 085603498372</p>
- </div>
-</section>
-
-</main>
-
-<footer>
- © 2026 <b>PIEMM STORE</b> · All Rights Reserved
-</footer>
-
-<script>
-const products = [
- {
-  name:"Nokos",
-  price:3000,
-  image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600",
-  desc:"Nomor kosong untuk kebutuhan digital."
- },
- {
-  name:"Link TikTok",
-  price:1000,
-  image:"https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=600",
-  desc:"Layanan link TikTok."
- },
- {
-  name:"Follower TikTok",
-  price:1000,
-  image:"https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600",
-  desc:"Layanan follower TikTok."
- },
- {
-  name:"Link Instagram",
-  price:1000,
-  image:"https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600",
-  desc:"Layanan link Instagram."
- },
- {
-  name:"Follower Instagram",
-  price:1000,
-  image:"https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600",
-  desc:"Layanan follower Instagram."
- },
- {
-  name:"Jasa Desain",
-  price:5000,
-  image:"https://images.unsplash.com/photo-1547658719-da2b51169166?w=600",
-  desc:"Jasa desain kreatif sesuai kebutuhan."
- },
- {
-  name:"Ebook Produk Digital",
-  price:5000,
-  image:"https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600",
-  desc:"Pilihan ebook produk digital."
- }
-];
-
-const list=document.getElementById("productList");
-
-products.forEach(p=>{
- const card=document.createElement("div");
- card.className="product";
- const message=encodeURIComponent(
-  "Halo PIEMM STORE, saya ingin memesan "+p.name+
-  " dengan harga Rp"+p.price.toLocaleString("id-ID")
- );
- card.innerHTML=`
-  <img src="${p.image}" alt="${p.name}" loading="lazy">
-  <div class="product-info">
-   <h3>${p.name}</h3>
-   <p>${p.desc}</p>
-   <div class="price">Rp${p.price.toLocaleString("id-ID")}</div>
-   <a class="btn" href="https://wa.me/6285603498372?text=${message}">
-    Pesan Sekarang
-   </a>
-  </div>`;
- list.appendChild(card);
-});
-
-function showPage(id,button){
- document.querySelectorAll(".page").forEach(p=>{
-  p.classList.remove("active");
- });
- document.getElementById(id).classList.add("active");
- document.querySelectorAll("nav button").forEach(b=>{
-  b.classList.remove("active");
- });
- if(button) button.classList.add("active");
- window.scrollTo({top:0,behavior:"smooth"});
-}
-</script>
+</div>
 
 </body>
 </html>
