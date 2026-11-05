@@ -4,99 +4,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Disclaimer - PM Store</title>
+<title>PM LINK - Link Produk</title>
+
 <style>
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  margin: 0;
-  padding: 20px;
-  background: #090014;
-  color: white;
   font-family: Arial, sans-serif;
+  background: #090610;
+  color: white;
+  min-height: 100vh;
 }
+
+header {
+  background: #160d25;
+  padding: 22px;
+  text-align: center;
+  border-bottom: 2px solid #8b35ff;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #bd83ff;
+}
+
+header p {
+  color: #c9b6df;
+  margin-top: 7px;
+}
+
 .container {
   max-width: 650px;
-  margin: 50px auto;
-  padding: 25px;
-  background: #17052b;
-  border: 1px solid #a020f0;
-  border-radius: 18px;
-  box-shadow: 0 0 20px #8a2be2;
+  margin: 35px auto;
+  padding: 20px;
 }
-h1 {
-  color: #c77dff;
-  text-align: center;
-}
+
 h2 {
-  color: #d8a5ff;
-}
-p {
-  line-height: 1.8;
-  color: #ddd;
-}
-a {
-  color: #d28aff;
-  text-decoration: none;
-}
-button {
-  background: #8a2be2;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.footer {
   text-align: center;
-  color: #999;
-  margin-top: 30px;
+  margin-bottom: 25px;
+  color: #c58aff;
+}
+
+.product {
+  background: #191124;
+  border: 1px solid #7130a8;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 18px #6820a633;
+}
+
+.product img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+.product-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.product-info h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  color: #c9b6df;
+  margin-bottom: 18px;
+}
+
+.buy {
+  display: block;
+  background: linear-gradient(90deg, #7023c9, #b044ff);
+  color: white;
+  text-decoration: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.buy:hover {
+  opacity: 0.85;
+}
+
+.disclaimer {
+  margin-top: 25px;
+  padding: 15px;
+  background: #171020;
+  border-left: 3px solid #a64dff;
+  border-radius: 8px;
+  color: #bbaacb;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #806c91;
   font-size: 12px;
 }
 </style>
 </head>
+
 <body>
 
+<header>
+  <div class="logo">PM LINK</div>
+  <p>Temukan produk pilihan di sini</p>
+</header>
+
 <div class="container">
-  <h1>DISCLAIMER</h1>
-  <p>Selamat datang di PM Store.</p>
 
-  <h2>1. Informasi Produk</h2>
-  <p>
-    Informasi produk ditampilkan sebagai referensi
-    bagi pengunjung. Detail produk, harga, dan
-    ketersediaan dapat berubah sewaktu-waktu.
-  </p>
+  <h2>PRODUK PILIHAN</h2>
 
-  <h2>2. Tautan Shopee</h2>
-  <p>
-    Beberapa tautan produk di website ini merupakan
-    tautan afiliasi Shopee. Kami dapat memperoleh
-    komisi apabila pengunjung melakukan pembelian
-    melalui tautan tersebut, tanpa biaya tambahan
-    bagi pembeli.
-  </p>
+  <div class="product">
 
-  <h2>3. Transaksi</h2>
-  <p>
-    Seluruh transaksi pembelian dilakukan melalui
-    platform Shopee. PM Store tidak bertanggung
-    jawab atas proses pembayaran dan pengiriman
-    yang dikelola oleh Shopee atau penjual.
-  </p>
+    <!-- FOTO PRODUK LINK 1 -->
+    <img src="foto1.jpg" alt="Foto Produk 1">
 
-  <h2>4. Persetujuan</h2>
-  <p>
-    Dengan menggunakan website ini, pengunjung
-    dianggap telah membaca dan memahami disclaimer
-    yang berlaku.
-  </p>
+    <div class="product-info">
+      <h3>Produk Pilihan #1</h3>
+      <p>Klik tombol di bawah untuk melihat produk.</p>
 
-  <div class="footer">
-    © 2026 PM Store. All Rights Reserved.
+      <a class="buy"
+         href="https://s.shopee.co.id/4Ve330TVbN"
+         target="_blank"
+         rel="noopener noreferrer">
+         BELI SEKARANG
+      </a>
+    </div>
+
   </div>
+
+  <div class="disclaimer">
+    <b>DISCLAIMER:</b><br>
+    PM LINK merupakan halaman berbagi tautan produk.
+    Pembelian dilakukan melalui platform Shopee.
+    Harga, stok, dan ketersediaan produk mengikuti
+    informasi yang tertera di Shopee.
+    Kami dapat menerima komisi dari pembelian melalui
+    tautan afiliasi.
+  </div>
+
 </div>
+
+<footer>
+  © 2026 PM LINK. All Rights Reserved.
+</footer>
 
 </body>
 </html>
